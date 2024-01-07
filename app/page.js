@@ -10,6 +10,9 @@ export default function Home() {
       <Link href="/second-table" className="text-green-600">
         Second Table
       </Link>
+      <Link href="/third-table" className="text-green-600">
+        Third Table
+      </Link>
     </main>
   );
 }

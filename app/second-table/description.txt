@@ -1,4 +1,4 @@
+Merging Headers
 Grouping Headers
-Sorting
-Merging Columns
+Sorting Columns
 Formating Cells
