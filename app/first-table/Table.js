@@ -27,6 +27,7 @@ function Table() {
       <Link href="/" className="self-start">
         Back
       </Link>
+      <p>Parasta tabula</p>
       <table>
         <thead>
           {tableInstance.getHeaderGroups().map((headerElement) => {

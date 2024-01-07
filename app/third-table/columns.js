@@ -1,6 +1,7 @@
 "use client";
 import { createColumnHelper } from "@tanstack/react-table";
 const columnHelper = createColumnHelper();
+
 // DATA SAMPLE
 
 // {
@@ -14,6 +15,8 @@ const columnHelper = createColumnHelper();
 //   "date": "6/11/2023"
 // }
 
+// https://tanstack.com/table/v8/docs/api/features/filters
+
 export const columnDef = [
   // accessorKey un header ir definēti lauki, tie nav pašizdomāti
   // accessorKey value jākorelē ar to kas ir datos, bet header var norādīt jebkādu tekstu.
@@ -22,29 +25,26 @@ export const columnDef = [
     accessorKey: "id",
     // Headera nosaukums tabulā. Brīvi izvēlēts
     header: "ID nummurs",
+    enableColumnFilter: false,
+    enableGlobalFilter: false,
   },
-  // Merging header columns
   {
-    accessorFn: (row) => ` ${row.gender} ${row.first_name} ${row.last_name}`,
-    header: "Dzimums, Vārds, Uzvārds",
+    accessorKey: "first_name",
+    header: "Vārds",
+    enableGlobalFilter: false,
   },
-  // Grouping header columns.
   {
-    header: "Epasts un datums",
-    columns: [
-      {
-        accessorKey: "email",
-        header: "E-pasts",
-      },
-      {
-        accessorKey: "date",
-        header: "Datums",
-        // Formating cell
-        cell: (cell) => {
-          const dateValue = cell.getValue(); // atgrieztu "6/11/2023", ja skatās pēc augšējā sample piemēra. Atgriež vērtību.
-          return new Date(dateValue).getFullYear();
-        },
-      },
-    ],
+    accessorKey: "last_name",
+    header: "Uzvārds",
+  },
+  {
+    accessorKey: "email",
+    header: "E-pasts",
+    enableColumnFilter: false,
+  },
+  {
+    accessorKey: "date",
+    header: "Datums",
+    enableColumnFilter: false,
   },
 ];
