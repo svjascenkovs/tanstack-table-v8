@@ -17,6 +17,12 @@ export default function Home() {
       <Link href="/fourth-table" className="text-green-600">
         Fourth Table (Pagination)
       </Link>
+      <Link href="/fifth-table" className="text-green-600">
+        Fifth Table (Selecting Rows)
+      </Link>
+      <Link href="/sixt-table" className="text-green-600">
+        Sixt Table (Column Ordering, Column Hiding)
+      </Link>
     </main>
   );
 }
